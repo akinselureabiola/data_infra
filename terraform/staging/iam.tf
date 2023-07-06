@@ -7,7 +7,7 @@ data "aws_iam_policy_document" "airflow_policy_doc" {
     actions = [
       "s3:ListBucket",
       "s3:GetBucketLocation",
-      "s3:GetObject"
+      "s3:GetObject",
     ]
 
     resources = [
@@ -32,7 +32,7 @@ resource "aws_iam_user_policy_attachment" "airflow_policy_attachment" {
 }
 
 resource "aws_iam_access_key" "airflow_access_secret_key" {
-  user    = aws_iam_user.airflow.name
+  user = aws_iam_user.airflow.name
 }
 
 resource "aws_ssm_parameter" "airflow_access_key" {
