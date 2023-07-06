@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "airflow_policy_doc" {
 
     resources = [
       "arn:aws:s3:::staging-olist",
-      "arn:aws:s3:::staging-olist/*",
+      "arn:aws:s3:::staging-olist/*"
     ]
   }
 }
